@@ -3,7 +3,11 @@ buildCache {
         enabled = false
     }
     remote(HttpBuildCache) {
-        url = System.getProperty("cache.url", "http://localhost:8885/")
-        push = true
-    }
+        url = System.getProperty("cache.url", "http://localhost:8081/artifactory/gradle-test/")
+		credentials {
+			username = "admin"
+			password = "password"		
+		}
+    	push = true
+	}
 }
